@@ -1,0 +1,104 @@
+<html>
+<body style="height: 100%; overflow: hidden; background-color: lightgray;" onkeydown="donow(event)">
+<div style="position: absolute; z-index: 1; background-color: yellow; height: 70px; width: 70px; top: 90%; left: 1%; transition-duration: s; border-style: solid; border-width: 1px; border-color: black;" id="d"></div><input type="checkbox" id="h" hidden><input type="checkbox" id="b" hidden>
+<script>
+var d = document.getElementById("d");
+var topy = 90;
+var left = 1;
+var topy2 = 90;
+var left2 = 1;
+var red = 0;
+var col = "yellow";
+var old_col = col;
+function donow(ev) {
+if(ev.key == "ArrowUp") {
+topy--;
+topy--;
+topy--;
+topy--;
+topy--;
+topy2--;
+topy2--;
+topy2--;
+topy2--;
+topy2--;
+
+}
+if(ev.key == "ArrowDown") {
+topy++;
+topy++;
+topy++;
+topy++;
+topy++;
+topy2++;
+topy2++;
+topy2++;
+topy2++;
+topy2++;
+}
+if(ev.key == "ArrowLeft") {
+left--;
+left--;
+left--;
+left--;
+left--;
+left2--;
+left2--;
+left2--;
+left2--;
+left2--;
+}
+if(ev.key == "ArrowRight") {
+left++;
+left++;
+left++;
+left++;
+left++;
+left2++;
+left2++;
+left2++;
+left2++;
+left2++;
+}
+if(ev.key == " ") {
+var h = document.getElementById("h");
+h.click();
+if(h.checked == true) {
+col = "yellow";
+old_col = "yellow";
+d.style.backgroundColor = "yellow";
+}
+if(h.checked == false) {
+col = "red";
+old_col = "red";
+d.style.backgroundColor = "red";
+}
+console.log(col);
+console.log(red);
+}
+if(ev.key == "t") {
+var b = document.getElementById("b");
+b.click();
+if(b.checked == true) {
+col = "lightgray";
+d.style.backgroundColor = "lightgray";
+}
+if(b.checked == false) {
+col = old_col;
+d.style.backgroundColor = old_col;
+}
+console.log(col);
+console.log(red);
+}
+var e = document.createElement("div");
+e.style.backgroundColor = col;
+e.style.position = "absolute";
+e.style.height = "70px";
+e.style.width = "70px";
+e.style.top = topy2 + "%";
+e.style.left = left2 + "%";
+document.body.appendChild(e);
+d.style.top = topy + "%";
+d.style.left = left + "%";
+}
+</script>
